@@ -20,8 +20,10 @@
             <a href="contacto.html">Contacto</a>
         </nav>
     </div>
+
    
     <section class="hero">
+
         <div class="contenido-hero">
             <h2>Desarrollando y Diseñando mi primera pagina Web</h2> 
             <div class="ubicacion">
@@ -32,9 +34,18 @@
                 </svg>
                 <p>Cerro de Pasco, Yanacancha</p>
             </div>
-            <a class="boton" href="#">Contactar</a>
+            <a href="#contacto" class="btn-contacto">Contactar</a>
         </div> <!-- .contenido-hero --> 
     </section>
+     
+<div class="like-container-fixed">
+  <button class="like-btn">❤️</button>
+  <span class="like-count">0</span>
+</div>
+
+        <button id="btnTop" >Ir Arriba</button>
+        <script src="js/script.js"></script>
+        
 
     <main class="contenedor sombra">
         <h2>Mis Servicios</h2>
@@ -124,6 +135,12 @@
     <footer class="footer">
         <p>Todos los derechos reservados. Yon CABALLERO ALVAREZ</p>
     </footer>
+
+ <script>
+  document.getElementById("btnIrArriba").addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 
 
 

@@ -242,3 +242,62 @@ h1,h2,h3 {
 .footer {
     text-align: center;
 }
+
+/* Estilo para el botón "Ir Arriba" */
+#btnTop {
+  position: fixed; /* Fijo en la pantalla */
+  bottom: 30px; /* Distancia desde la parte inferior */
+  right: 30px; /* Distancia desde la derecha */
+  padding: 10px 15px; /* Espaciado interno */
+  background-color: #007bff; /* Color de fondo (azul) */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor en forma de mano */
+  font-size: 14px; /* Tamaño de fuente */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* sombra sutil */
+  transition: background-color 0.3s, transform 0.2s; /* transición suave */
+  z-index: 1000; /* Para que esté por encima de otros elementos */
+}
+
+.like-container-fixed {
+  position: fixed;
+  bottom: 80px; /* 🔥 MÁS ARRIBA que el botón "Ir Arriba" */
+  right: 30px;  /* mismo lado */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.like-btn {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.like-btn.liked {
+  color: red;
+}
+
+.btn-contacto {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background-color: #28a745; /* verde */
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* 🔥 EFECTO AL PASAR EL CURSOR */
+.btn-contacto:hover {
+  background-color: #1e7e34; /* verde más oscuro */
+  transform: scale(1.05);
+}
