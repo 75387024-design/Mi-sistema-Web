@@ -1,0 +1,305 @@
+/* VARIABLES */
+:root {
+    --blanco: #ffffff;
+    --oscuro: #0b0f2f;
+    --primario: #1c1f4a;
+    --secundario: #e91f4b;
+    --gris: #3c3f58;
+    --grisClaro: #f2f4f8;
+}
+
+/* RESET GENERAL */
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--grisClaro);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    background-color: var(--blanco);
+    padding: 2.5rem;
+}
+header h1 {
+    margin: 0;
+    color: var(--oscuro);
+}
+
+/* NAVEGACIÓN */
+nav {
+    background-color: var(--secundario);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../imagen/');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+.hero h2 { font-size: 3rem; margin-bottom: 1rem; }
+
+.boton {
+    background-color: var(--secundario);
+    color: white;
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    border-radius: .5rem;
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+/* CONTENEDOR BLANCO (Servicios) */
+.contenedor-blanco {
+    max-width: 1000px;
+    margin: -5rem auto 4rem auto;
+    background-color: var(--blanco);
+    padding: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.contenedor-blanco h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--oscuro);
+}
+
+/* GRID DE SERVICIOS */
+@media (min-width: 768px) {
+    .servicios-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        align-items: stretch;
+    }
+}
+
+.servicio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.servicio-card h3 {
+    color: var(--secundario);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+/* ESTILO DE ICONOS */
+.servicio-card svg, 
+.iconos-dobles svg {
+    background-color: var(--primario);
+    color: var(--blanco);
+    border-radius: 50%;
+    padding: 1.5rem;
+    width: 75px;
+    height: 75px;
+    margin-bottom: 2rem;
+}
+
+.iconos-dobles {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* SECCIÓN CLIENTES */
+.clientes-seccion {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.clientes-seccion h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+}
+
+.clientes-grid {
+    display: grid;
+    /* Ajuste para que las 5 tarjetas se acomoden mejor */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.cliente-card {
+    background-color: var(--blanco);
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    border-bottom: 5px solid var(--secundario);
+    transition: transform .3s ease, box-shadow .3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantiene el botón/email abajo */
+}
+
+.cliente-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+}
+
+/* FOTOS DE CLIENTES - CORRECCIÓN DE PROPORCIÓN */
+.cliente-avatar {
+    width: 12rem;      /* Tamaño un poco más grande para que luzcan */
+    height: 12rem;
+    border-radius: 50%;
+    object-fit: cover; /* ESTO EVITA QUE SE ESTIREN */
+    object-position: center;
+    margin: 0 auto 2rem auto;
+    border: 4px solid var(--grisClaro);
+    display: block;
+}
+
+.cliente-card h3 {
+    margin: 0 0 1rem 0;
+    color: var(--primario);
+    font-size: 2rem;
+}
+
+.testimonio {
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--gris);
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Empuja el contacto hacia abajo */
+}
+
+.cliente-contacto {
+    color: var(--secundario);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* WHATSAPP */
+.whatsapp-container {
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.boton-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #25D366;
+    color: white;
+    padding: 1.5rem 3.5rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.8rem;
+    transition: background-color .3s ease, transform .2s ease;
+}
+
+.boton-whatsapp:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+
+/* FORMULARIO DE CONTACTO */
+.contacto-seccion {
+    padding: 5rem 2rem;
+}
+
+.formulario {
+    background-color: var(--gris);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset { border: none; padding: 0; }
+
+.formulario legend {
+    color: var(--blanco);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.campo { margin-bottom: 2rem; }
+
+.formulario label { color: var(--blanco); display: block; margin-bottom: .8rem; }
+
+.formulario input, 
+.formulario textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: .5rem;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.formulario textarea { height: 120px; }
+
+.formulario button {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    border-radius: .5rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    transition: background-color .3s ease;
+}
+
+.formulario button:hover {
+    background-color: #c71a3f;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--oscuro);
+    color: var(--blanco);
+}
